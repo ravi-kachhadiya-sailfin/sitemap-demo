@@ -1,23 +1,38 @@
-import logo from './logo.svg';
+import React from "react";
+import Routes from './Routes';
+import { MetaContext } from "./MetaProvider";
+import { Helmet } from "react-helmet";
+
 import './App.css';
 
+
 function App() {
+  const { meta } = React.useContext(MetaContext);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Helmet>
+
+        {/* Primary Meta Tags */}
+        <title>{meta.title}</title>
+        <link rel="canonical" href={meta.url} />
+        <meta name="title" content={meta.title} />
+        <meta name="description" content={meta.description} />
+
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={meta.url} />
+        <meta property="og:title" content={meta.title} />
+        <meta property="og:description" content={meta.description} />
+
+        {/* Twitter  */}
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content={meta.url} />
+        <meta property="twitter:title" content={meta.title} />
+        <meta property="twitter:description" content={meta.description} />
+      </Helmet>
+      <Routes />
+
     </div>
   );
 }

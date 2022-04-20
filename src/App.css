@@ -1,10 +1,12 @@
-.App {
-  text-align: center;
-}
-
 .App-logo {
   height: 40vmin;
+  text-align: center;
   pointer-events: none;
+}
+
+* {
+  padding: 0px;
+  margin: 0px;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -32,7 +34,52 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+}
+
+.page-not-found {
+  text-align: center;
+}
+
+.todo {
+  border: 1px solid #61dafb50;
+  padding: 10px;
+  width: 200px;
+  margin: 10px;
+  box-shadow: 0px 1px 10px #dfdfdf;
+}
+
+.todo:hover {
+  background-color: #bef5c045;
+  cursor: pointer;
+}
+
+.todo-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+p {
+  color: #ff8c8c;
+  padding: 5px 8px;
+  background-color: #f5f5f5;
+  width: fit-content;
+  border-radius: 2px;
+}
+
+h3 {
+  color: #343434;
+  margin-top: 10px;
+}
+
+.tool-detail {
+  border: 1px solid #c1dd92;
+  margin: 20px;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 20px;
+  box-shadow: 0px 0px 15px #d1ffaf;
 }
